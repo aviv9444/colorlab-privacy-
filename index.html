@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ColorLab Coloring — Privacy Policy / מדיניות פרטיות</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,800;1,400&family=Heebo:wght@300;400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1614;
+    --paper: #f7f3ec;
+    --paper-warm: #f0e9dc;
+    --accent-coral: #e85d4a;
+    --accent-teal: #2d6a6a;
+    --accent-mustard: #d4a843;
+    --muted: #6b5d52;
+    --rule: #d4c8b8;
+    --shadow: 0 1px 0 rgba(26,22,20,0.04), 0 8px 24px -12px rgba(26,22,20,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    line-height: 1.7;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(232, 93, 74, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(45, 106, 106, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(212, 168, 67, 0.04) 0%, transparent 50%);
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Header */
+  .masthead {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 32px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 28px;
+  }
+
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-dots {
+    display: inline-flex;
+    gap: 4px;
+  }
+
+  .brand-dots span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .brand-dots span:nth-child(1) { background: var(--accent-coral); }
+  .brand-dots span:nth-child(2) { background: var(--accent-mustard); }
+  .brand-dots span:nth-child(3) { background: var(--accent-teal); }
+
+  h1.title {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+
+  h1.title .em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent-coral);
+  }
+
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 20px;
+  }
+
+  .meta strong { color: var(--ink); font-weight: 600; }
+
+  /* Language toggle */
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--paper-warm);
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    padding: 4px;
+    margin-bottom: 36px;
+    box-shadow: var(--shadow);
+  }
+
+  .lang-toggle button {
+    background: transparent;
+    border: none;
+    padding: 8px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 999px;
+    transition: all 0.25s ease;
+  }
+
+  .lang-toggle button.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Content sections */
+  .content-section { display: none; }
+  .content-section.active { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Intro callout */
+  .intro {
+    background: var(--paper-warm);
+    border-right: 4px solid var(--accent-coral);
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-family: 'Fraunces', serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-style: italic;
+    color: var(--ink);
+    position: relative;
+  }
+
+  [dir="ltr"] .intro {
+    border-right: none;
+    border-left: 4px solid var(--accent-coral);
+  }
+
+  .intro::before {
+    content: '✦';
+    position: absolute;
+    top: -10px;
+    right: 24px;
+    background: var(--paper);
+    padding: 0 8px;
+    color: var(--accent-coral);
+    font-size: 18px;
+  }
+
+  [dir="ltr"] .intro::before {
+    right: auto;
+    left: 24px;
+  }
+
+  /* Sections */
+  section.policy-section {
+    margin-bottom: 44px;
+  }
+
+  h2.section-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  h2.section-num .num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-coral);
+    letter-spacing: 0.1em;
+    background: var(--paper-warm);
+    padding: 4px 10px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 14px; color: var(--ink); }
+
+  ul.policy-list {
+    list-style: none;
+    margin: 14px 0 14px 0;
+    padding: 0;
+  }
+
+  ul.policy-list li {
+    position: relative;
+    padding-right: 24px;
+    margin-bottom: 10px;
+    line-height: 1.65;
+  }
+
+  [dir="ltr"] ul.policy-list li {
+    padding-right: 0;
+    padding-left: 24px;
+  }
+
+  ul.policy-list li::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 12px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-teal);
+    border-radius: 50%;
+  }
+
+  [dir="ltr"] ul.policy-list li::before {
+    right: auto;
+    left: 0;
+  }
+
+  ul.policy-list li:nth-child(3n+2)::before { background: var(--accent-coral); }
+  ul.policy-list li:nth-child(3n+3)::before { background: var(--accent-mustard); }
+
+  strong { font-weight: 700; color: var(--ink); }
+
+  a {
+    color: var(--accent-teal);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  a:hover { color: var(--accent-coral); }
+
+  /* Highlight box */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(45, 106, 106, 0.08) 0%, rgba(212, 168, 67, 0.06) 100%);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 20px 0;
+  }
+
+  .highlight-box .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  /* Contact card */
+  .contact-card {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 36px 32px;
+    border-radius: 4px;
+    margin-top: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: -40px;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, var(--accent-coral) 0%, transparent 70%);
+    opacity: 0.4;
+  }
+
+  .contact-card::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, var(--accent-teal) 0%, transparent 70%);
+    opacity: 0.3;
+  }
+
+  .contact-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .contact-card p {
+    color: rgba(247, 243, 236, 0.85);
+    position: relative;
+    z-index: 1;
+    margin-bottom: 6px;
+  }
+
+  .contact-card a {
+    color: var(--accent-mustard);
+    font-weight: 500;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 80px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  footer .ornament {
+    font-size: 14px;
+    color: var(--accent-coral);
+    margin-bottom: 12px;
+    letter-spacing: 0.5em;
+  }
+
+  /* English content */
+  [dir="ltr"] {
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+  }
+
+  [dir="ltr"] h1.title,
+  [dir="ltr"] h2.section-num,
+  [dir="ltr"] .subtitle,
+  [dir="ltr"] .intro,
+  [dir="ltr"] .contact-card h3 {
+    font-family: 'Fraunces', serif;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container { padding: 48px 20px 80px; }
+    h1.title { font-size: 2.2rem; }
+    h2.section-num { font-size: 1.35rem; flex-direction: column; gap: 8px; align-items: flex-start; }
+    .intro { padding: 20px; font-size: 1rem; }
+    .contact-card { padding: 28px 24px; }
+    .meta { font-size: 11px; gap: 10px 18px; }
+  }
+
+  /* Print */
+  @media print {
+    body { background: white; }
+    body::before { display: none; }
+    .lang-toggle { display: none; }
+    .content-section { display: block !important; }
+    .container { padding: 20px; max-width: 100%; }
+    .contact-card { background: var(--paper-warm); color: var(--ink); }
+    .contact-card p { color: var(--muted); }
+    .contact-card a { color: var(--accent-teal); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="brand-mark">
+        <span class="brand-dots"><span></span><span></span><span></span></span>
+        ColorLab Coloring
+      </span>
+      <span>Document № 001 — Privacy</span>
+    </div>
+    <h1 class="title">Privacy <span class="em">Policy</span></h1>
+    <p class="subtitle">מדיניות פרטיות · ColorLab Coloring App</p>
+    <div class="meta">
+      <span><strong>Effective Date:</strong> November 3, 2025</span>
+      <span><strong>Last Updated:</strong> November 3, 2025</span>
+      <span><strong>Version:</strong> 1.0</span>
+    </div>
+  </header>
+
+  <div class="lang-toggle" role="tablist" aria-label="Language">
+    <button type="button" class="active" data-lang="he">עברית</button>
+    <button type="button" data-lang="en">English</button>
+  </div>
+
+  <!-- ===================== HEBREW CONTENT ===================== -->
+  <div class="content-section active" id="content-he" dir="rtl" lang="he">
+
+    <div class="intro">
+      אנחנו ב-‎ColorLab Coloring‎ מאמינים שצביעה היא רגע של שקט, יצירה, וכיף — ללא חששות.
+      המדיניות הזו מסבירה בשפה פשוטה וכנה איזה מידע האפליקציה שלנו אוספת, איך הוא משמש, ומה הזכויות שלך כמשתמש.
+    </div>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">01</span>מי אנחנו</h2>
+      <p>
+        אפליקציית ‎ColorLab Coloring‎ מפותחת ומופעלת על ידי <strong>‎ColorLabByAviv‎</strong>
+        (להלן: "אנחנו", "האפליקציה"). האפליקציה מציעה דפי צביעה דיגיטליים, כלי ציור, ויכולת לשמור ולשתף יצירות.
+      </p>
+      <p>
+        מדיניות זו חלה על השימוש שלך באפליקציית ‎ColorLab Coloring‎ בכל מכשירי ‎Android‎.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">02</span>איזה מידע אנחנו אוספים</h2>
+      <p>
+        אנחנו מאמינים בעקרון של <strong>איסוף מינימלי</strong>. רוב פעילות האפליקציה מתבצעת באופן מקומי על המכשיר שלך, ולא נשלחת אלינו או לשרת שלנו.
+      </p>
+
+      <p><strong>מידע שנשמר רק על המכשיר שלך:</strong></p>
+      <ul class="policy-list">
+        <li>יצירות הצביעה שיצרת ושמרת</li>
+        <li>הגדרות אישיות באפליקציה (שפה, העדפות תצוגה)</li>
+        <li>קבצי ‎PDF‎ שהעלית לצורך צביעה</li>
+      </ul>
+
+      <p><strong>מידע שנאסף על ידי שירותי צד שלישי:</strong></p>
+      <ul class="policy-list">
+        <li><strong>‎Google AdMob‎</strong> — מציג פרסומות באנר באפליקציה ועשוי לאסוף מזהי פרסום, מידע על המכשיר וכתובת ‎IP‎ לצורך התאמת מודעות. ראו פירוט בסעיף 5.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <span class="label">חשוב לדעת</span>
+        <strong>אנחנו לא אוספים שמות, כתובות אימייל, מספרי טלפון, או כל מידע מזהה אישית.</strong>
+        אין באפליקציה הרשמה, התחברות, או חשבון משתמש.
+      </div>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">03</span>הרשאות שהאפליקציה מבקשת</h2>
+      <p>האפליקציה מבקשת את ההרשאות הבאות מהמכשיר שלך:</p>
+      <ul class="policy-list">
+        <li><strong>אחסון / מדיה</strong> — כדי לשמור את יצירות הצביעה שלך כתמונות בגלריה של המכשיר ולאפשר שיתוף שלהן.</li>
+        <li><strong>אינטרנט</strong> — לצורך הצגת פרסומות ‎Google AdMob‎ בלבד. האפליקציה עצמה פועלת באופן מלא ללא צורך בחיבור לאינטרנט.</li>
+      </ul>
+      <p>
+        אתה יכול לבטל הרשאות אלו בכל עת דרך הגדרות המכשיר. ביטול הרשאת אחסון יחסום את האפשרות לשמור יצירות, אך השימוש הבסיסי באפליקציה יישאר אפשרי.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">04</span>איך אנחנו משתמשים במידע</h2>
+      <p>המידע המינימלי הנאסף משמש אך ורק למטרות הבאות:</p>
+      <ul class="policy-list">
+        <li>הפעלת הפונקציונליות הבסיסית של האפליקציה (שמירת יצירות, שיתוף, צביעה)</li>
+        <li>הצגת פרסומות באמצעות ‎Google AdMob‎ כדי לתמוך בפיתוח ובתחזוקה של האפליקציה</li>
+        <li>שיפור חוויית השימוש דרך הבנה כללית של ביצועי האפליקציה</li>
+      </ul>
+      <p>
+        <strong>אנחנו לא מוכרים מידע, לא משתפים מידע אישי עם מפרסמים, ולא משתמשים במידע למטרות שלא פורטו במדיניות זו.</strong>
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">05</span>שירותי צד שלישי</h2>
+      <p>
+        האפליקציה משתמשת בשירות פרסום אחד בלבד: <strong>‎Google AdMob‎</strong>.
+      </p>
+      <p>
+        ‎AdMob‎ הוא שירות של ‎Google LLC‎ המציג מודעות באפליקציות. הוא עשוי לאסוף נתונים אנונימיים כגון:
+      </p>
+      <ul class="policy-list">
+        <li>מזהה פרסום של ‎Android‎ (‎Advertising ID‎) — ניתן לאיפוס דרך הגדרות המכשיר</li>
+        <li>מידע טכני על המכשיר (דגם, גרסת מערכת הפעלה)</li>
+        <li>כתובת ‎IP‎ כללית</li>
+      </ul>
+      <p>
+        ‎Google‎ עשויה להשתמש במידע זה בהתאם למדיניות הפרטיות שלה:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+      </p>
+      <p>
+        כדי להגביל פרסום מותאם אישית, ניתן ללכת לתוך הגדרות המכשיר ⟵ ‎Google‎ ⟵ פרסומות, ולבחור באפשרות לאיפוס מזהה פרסום או לבטל פרסום מותאם אישית.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">06</span>ילדים ומשתמשים מתחת לגיל 13</h2>
+      <p>
+        ‎ColorLab Coloring‎ היא אפליקציה לקהל מעורב (‎mixed audience‎) — כלומר, היא מתאימה למבוגרים ולילדים כאחד.
+        אנחנו מתייחסים בכובד ראש לפרטיות של ילדים ופועלים בהתאם לחוק ‎COPPA‎ (‎Children's Online Privacy Protection Act‎)
+        ולמדיניות המשפחות של ‎Google Play‎.
+      </p>
+
+      <div class="highlight-box">
+        <span class="label">התחייבויות לגבי ילדים</span>
+        <ul class="policy-list" style="margin-top: 8px;">
+          <li>לא נאסף ביודעין מידע מזהה אישית מילדים מתחת לגיל 13.</li>
+          <li>הפרסומות המוצגות לילדים מסוננות לדירוג ‎G‎ בלבד (תוכן מתאים לכל הגילאים).</li>
+          <li>לא משודרים מזהי פרסום או נתוני מעקב למשתמשים שזוהו כילדים.</li>
+          <li>אין באפליקציה צ'אט, פורומים, או אינטראקציה חברתית עם משתמשים אחרים.</li>
+          <li>אין רכישות בתוך האפליקציה בגרסה הנוכחית.</li>
+        </ul>
+      </div>
+
+      <p>
+        אם אתה הורה או אפוטרופוס וברצונך לבדוק או למחוק כל מידע שעשוי להיות קשור לילדך, אנא פנה אלינו בכתובת המייל בסוף המסמך.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">07</span>אבטחה ואחסון</h2>
+      <p>
+        כל יצירות הצביעה והקבצים שלך נשמרים <strong>באופן מקומי על המכשיר בלבד</strong>.
+        אנחנו לא מעבירים אותם לשרתים שלנו ולא לענן.
+      </p>
+      <p>
+        אבטחת הקבצים תלויה באבטחת המכשיר שלך. מומלץ לשמור את המכשיר עם נעילת מסך ולעדכן את מערכת ההפעלה.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">08</span>הזכויות שלך</h2>
+      <p>בהתאם לחוק הגנת הפרטיות הישראלי, ‎GDPR‎ באירופה, ו-‎CCPA‎ בקליפורניה, יש לך זכויות הבאות:</p>
+      <ul class="policy-list">
+        <li><strong>זכות גישה</strong> — לדעת איזה מידע אנחנו אוספים (התשובה: כמעט שום דבר 🙂).</li>
+        <li><strong>זכות מחיקה</strong> — להסיר את האפליקציה מהמכשיר שלך, מה שמוחק את כל הנתונים המקומיים.</li>
+        <li><strong>זכות התנגדות</strong> — לבטל הרשאות או לאפס את מזהה הפרסום שלך דרך הגדרות המכשיר.</li>
+        <li><strong>זכות פנייה</strong> — לפנות אלינו בכל שאלה דרך פרטי הקשר בסוף המסמך.</li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">09</span>שינויים במדיניות</h2>
+      <p>
+        אנחנו עשויים לעדכן את המדיניות הזו מעת לעת, למשל כשמתווספות תכונות חדשות לאפליקציה.
+        תאריך העדכון האחרון מופיע בראש המסמך. שינויים מהותיים יוצגו במסך פתיחה באפליקציה.
+      </p>
+      <p>
+        המשך השימוש באפליקציה לאחר עדכון המדיניות מהווה הסכמה לתנאים החדשים.
+      </p>
+    </section>
+
+    <div class="contact-card">
+      <h3>יצירת קשר</h3>
+      <p>שאלות, בקשות פרטיות, או דיווח על בעיה?</p>
+      <p>פנה אלינו במייל: <a href="mailto:aviv9444@gmail.com">aviv9444@gmail.com</a></p>
+      <p style="margin-top: 12px; font-size: 13px;">
+        אנחנו משיבים תוך 14 ימי עסקים. הצוות של ‎ColorLabByAviv‎ דובר עברית ואנגלית.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ===================== ENGLISH CONTENT ===================== -->
+  <div class="content-section" id="content-en" dir="ltr" lang="en">
+
+    <div class="intro">
+      At ColorLab Coloring, we believe coloring is a moment of calm, creativity, and joy — without worry.
+      This policy explains in plain, honest language what information our app collects, how it's used, and what your rights are as a user.
+    </div>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">01</span>Who We Are</h2>
+      <p>
+        The ColorLab Coloring application is developed and operated by <strong>ColorLabByAviv</strong>
+        ("we", "us", "the App"). The App offers digital coloring pages, drawing tools, and the ability to save and share creations.
+      </p>
+      <p>
+        This policy applies to your use of the ColorLab Coloring app on all Android devices.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">02</span>What Information We Collect</h2>
+      <p>
+        We believe in <strong>minimal data collection</strong>. Most app activity happens locally on your device and is never transmitted to us or our servers.
+      </p>
+
+      <p><strong>Information stored only on your device:</strong></p>
+      <ul class="policy-list">
+        <li>Coloring artworks you create and save</li>
+        <li>Personal app settings (language, display preferences)</li>
+        <li>PDF files you upload for coloring</li>
+      </ul>
+
+      <p><strong>Information collected by third-party services:</strong></p>
+      <ul class="policy-list">
+        <li><strong>Google AdMob</strong> — Displays banner ads in the app and may collect advertising identifiers, device information, and IP address for ad personalization. See Section 5 for details.</li>
+      </ul>
+
+      <div class="highlight-box">
+        <span class="label">Important to know</span>
+        <strong>We do not collect names, email addresses, phone numbers, or any personally identifiable information.</strong>
+        The app has no registration, login, or user account.
+      </div>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">03</span>Permissions the App Requests</h2>
+      <p>The app requests the following permissions on your device:</p>
+      <ul class="policy-list">
+        <li><strong>Storage / Media</strong> — To save your coloring creations as images in your device gallery and enable sharing.</li>
+        <li><strong>Internet</strong> — Solely for displaying Google AdMob advertisements. The app itself functions fully without an internet connection.</li>
+      </ul>
+      <p>
+        You may revoke these permissions at any time through your device settings. Revoking storage permission will block the ability to save creations, but basic use of the app will remain possible.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">04</span>How We Use Information</h2>
+      <p>The minimal information collected is used solely for the following purposes:</p>
+      <ul class="policy-list">
+        <li>To operate the basic functionality of the app (saving creations, sharing, coloring)</li>
+        <li>To display advertisements via Google AdMob to support the development and maintenance of the app</li>
+        <li>To improve user experience through general understanding of app performance</li>
+      </ul>
+      <p>
+        <strong>We do not sell information, share personal data with advertisers, or use information for purposes beyond those described in this policy.</strong>
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">05</span>Third-Party Services</h2>
+      <p>
+        The app uses only one advertising service: <strong>Google AdMob</strong>.
+      </p>
+      <p>
+        AdMob is a service provided by Google LLC that displays ads in apps. It may collect anonymous data such as:
+      </p>
+      <ul class="policy-list">
+        <li>Android Advertising ID — can be reset through device settings</li>
+        <li>General device information (model, OS version)</li>
+        <li>General IP address</li>
+      </ul>
+      <p>
+        Google may use this information in accordance with its Privacy Policy:
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+      </p>
+      <p>
+        To limit personalized advertising, go to your device Settings → Google → Ads, and choose to reset your advertising ID or opt out of personalized ads.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">06</span>Children Under 13</h2>
+      <p>
+        ColorLab Coloring is a mixed-audience app — meaning it is suitable for both adults and children.
+        We take children's privacy seriously and comply with COPPA (Children's Online Privacy Protection Act)
+        and Google Play's Families Policy.
+      </p>
+
+      <div class="highlight-box">
+        <span class="label">Children's Privacy Commitments</span>
+        <ul class="policy-list" style="margin-top: 8px;">
+          <li>We do not knowingly collect personally identifiable information from children under 13.</li>
+          <li>Ads displayed to children are filtered to G-rated content only (suitable for all ages).</li>
+          <li>No advertising identifiers or tracking data are transmitted for users identified as children.</li>
+          <li>The app contains no chat, forums, or social interaction with other users.</li>
+          <li>There are no in-app purchases in the current version.</li>
+        </ul>
+      </div>
+
+      <p>
+        If you are a parent or guardian and wish to review or delete any information that may relate to your child, please contact us at the email address at the end of this document.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">07</span>Security and Storage</h2>
+      <p>
+        All your coloring creations and files are stored <strong>locally on your device only</strong>.
+        We do not transfer them to our servers or to the cloud.
+      </p>
+      <p>
+        File security depends on your device security. We recommend keeping your device with a screen lock and updating your operating system.
+      </p>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">08</span>Your Rights</h2>
+      <p>Under the Israeli Privacy Protection Law, GDPR (EU), and CCPA (California), you have the following rights:</p>
+      <ul class="policy-list">
+        <li><strong>Right of access</strong> — to know what information we collect (the answer: almost nothing 🙂).</li>
+        <li><strong>Right of erasure</strong> — to remove the app from your device, which deletes all local data.</li>
+        <li><strong>Right to object</strong> — to revoke permissions or reset your advertising ID via device settings.</li>
+        <li><strong>Right to contact</strong> — to reach us with any question through the contact details below.</li>
+      </ul>
+    </section>
+
+    <section class="policy-section">
+      <h2 class="section-num"><span class="num">09</span>Changes to This Policy</h2>
+      <p>
+        We may update this policy from time to time, for example when new features are added to the app.
+        The last updated date appears at the top of this document. Substantial changes will be communicated through an in-app screen.
+      </p>
+      <p>
+        Continued use of the app after a policy update constitutes acceptance of the new terms.
+      </p>
+    </section>
+
+    <div class="contact-card">
+      <h3>Contact Us</h3>
+      <p>Questions, privacy requests, or reporting an issue?</p>
+      <p>Email us at: <a href="mailto:aviv9444@gmail.com">aviv9444@gmail.com</a></p>
+      <p style="margin-top: 12px; font-size: 13px;">
+        We respond within 14 business days. The ColorLabByAviv team speaks Hebrew and English.
+      </p>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="ornament">✦ ✦ ✦</div>
+    <p>© 2025 ColorLabByAviv · ColorLab Coloring · All rights reserved</p>
+  </footer>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.lang-toggle button');
+  const sections = document.querySelectorAll('.content-section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      sections.forEach(s => s.classList.remove('active'));
+      document.getElementById('content-' + lang).classList.add('active');
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = (lang === 'he') ? 'rtl' : 'ltr';
+    });
+  });
+</script>
+</body>
+</html>
